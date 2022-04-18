@@ -12,7 +12,7 @@
   <div id="main">
     <div id="header">
       <ul id="nav">
-        <li><a href="#slider">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#band">Band</a></li>
         <li><a href="#tour">Tour</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -233,8 +233,13 @@
 //Lấy ra tất cả những cái được đánh dấu bằng #
   for (var i = 0; i < menuItems.length; i++) {
     var menuItem = menuItems[i];
-    menuItem.onclick = function () {
-        header.style.height = null;
+    menuItem.onclick = function () {/*nếu không phải ParentMenu thì mới ẩn cái Menu đi.*/
+      var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+      if(isParentMenu) {/*If it's not ParentMenu, then hide the Menu*/
+        event.preventDefault();/*Remove the default behavior*/
+      }else {
+          header.style.height = null;
+        }
     }
   }
 </script>
@@ -258,3 +263,6 @@ way 2: press the end button
 -->
 <!--ul has property B, so it takes up all width dimensions-->
 <!--mobile-menu:khi muốn làm thẻ div của  -->
+<!--Move 1 line code : Alt + down arrow 
+this : chính item nó click/bấm vào
+-->

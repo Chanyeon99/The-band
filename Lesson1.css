@@ -67,7 +67,6 @@ body {
   left: 0px;
   right: 0;
   z-index: 1;
-  overflow: hidden;
 }
 #nav {
   display: inline-block; /*inherit the full length of the browser*/
@@ -119,7 +118,7 @@ body {
     top: 0;
     right: 0;
     position: absolute;
-    
+    display: none;
 }
 #header .mobile__menu-btn,
 #header .search-btn {
@@ -145,6 +144,12 @@ body {
   line-height: 46px;
   padding: 0 21px;
   font-weight: bold;
+}
+#header .mobile__menu-btn {
+  top: 0;
+  right: 0;
+  position: absolute;
+  display: none;
 }
 #slider {
   position: relative;
