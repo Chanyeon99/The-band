@@ -115,12 +115,16 @@ body {
   padding: 0 12px;
   line-height: 38px;
 }
+#header .mobile__menu-btn {
+    top: 0;
+    right: 0;
+    position: absolute;
+    
+}
 #header .mobile__menu-btn,
 #header .search-btn {
   float: right;
-  top: 0;
-  right: 0;
-  position: absolute;
+ 
 }
 
 #header .search-btn:hover {
