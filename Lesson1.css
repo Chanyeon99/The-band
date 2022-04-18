@@ -25,7 +25,7 @@ body {
   float: left;
   padding: 0px 8px;
 }
-.col-half {
+.col-half ~{
   width: 50%;
 }
 .col-full {
@@ -61,13 +61,13 @@ body {
 }
 #header {
   background-color: #000;
-  height: 46px;
-  display: block;
+  height: 48px;
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0;
   z-index: 1;
+  overflow: hidden;
 }
 #nav {
   display: inline-block; /*inherit the full length of the browser*/
@@ -115,15 +115,25 @@ body {
   padding: 0 12px;
   line-height: 38px;
 }
+#header .mobile__menu-btn,
 #header .search-btn {
   float: right;
 }
+
 #header .search-btn:hover {
   background-color: #ff0000;
   cursor: pointer;
 }
+#header .mobile__menu-btn:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+#header .mobile__menu-btn:hover .menu-icon{
+  color: #000;
+}
+#header .mobile__menu-btn .menu-icon,
 #header .search-btn .search-ikons {
-  color: orange;
+  color: #fff;
   font-size: 20px;
   line-height: 46px;
   padding: 0 21px;

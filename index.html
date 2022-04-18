@@ -6,7 +6,8 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2912/2912048.png" type="image/png"/>
     <link rel="stylesheet" href="Lesson1.css">
     <link rel="stylesheet" href="./themify-icons-font/themify-icons/themify-icons.css"><!--link:css-->
-</head>
+    <link rel="stylesheet" href="responsive.css">
+  </head>
 <body>
   <div id="main">
     <div id="header">
@@ -15,19 +16,21 @@
         <li><a href="#band">Band</a></li>
         <li><a href="#tour">Tour</a></li>
         <li><a href="#contact">Contact</a></li>
-      
         <li><!--caret down : dấu mũ xuống-->
-          <a href="">More <i class="fa-solid fa-caret-down"></i> </a>
+          <a href="#">More <i class="fa-solid fa-caret-down"></i> </a>
           <ul class="subnav">
-            <li><a href="">Merchandise</a></li>
-            <li><a href="">Extras</a></li>
-            <li><a href="">Media</a></li>
+            <li><a href="#">Merchandise</a></li>
+            <li><a href="#">Extras</a></li>
+            <li><a href="#">Media</a></li>
           </ul>
         </li>
       </ul>
       <!--Begin: search buttons-->
       <div class="search-btn">
         <i class="search-ikons ti-search"></i> <!--i.ti-search-->
+      </div>
+      <div id="mobile-menu" class="mobile__menu-btn">
+        <i class="menu-icon ti-menu"></i>
       </div>
     </div>
     <div id="slider">
@@ -210,13 +213,37 @@
   /*stopPropagation: pause */
   /*click v*/
 </script>
+<script>
+  var header = document.getElementById('header');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var headerHeight = header.clientHeight;
+  /*Close/ Open Mobile menu */
+
+  mobileMenu.onclick = function() {
+    /*cheack height of header */
+    var isClosed = header.clientHeight === headerHeight;
+    if (isClosed) {
+      header.style.height = 'auto';/*If the Button closed, click it to Open*/
+    } else {
+      header.style.height = null;
+    }
+  }/*Tự động đóng khi chọn menu.*/
+//Automatically close when selecting menu 
+  var menuItems = document.querySelectorAll('#nav li a[href*="#"');//take out all the ones marked with # 
+//Lấy ra tất cả những cái được đánh dấu bằng #
+  for (var i = 0; i < menuItems.length; i++) {
+    var menuItem = menuItems[i];
+    menuItem.onclick = function () {
+        header.style.height = null;
+    }
+  }
+</script>
 <script src="https://kit.fontawesome.com/3e9c9df1a4.js" crossorigin="anonymous"></script>
 </body>
 </html>
 <!--Copy many of the same words to css-->
 <!--Ctrl + D
-<i class="fa-solid fa-magnifying-glass"></i>
--->
+<i class="fa-solid fa-magnifying-glass"></i>-->
 <!--copy many different words to css-->
 <!--Ctrl+ shift+ L-->
 <!--shift + Alt + right arrow (->)--> 
