@@ -118,7 +118,9 @@ body {
 #header .mobile__menu-btn,
 #header .search-btn {
   float: right;
-  padding: 0 21px;
+  top: 0;
+  right: 0;
+  position: absolute;
 }
 
 #header .search-btn:hover {
